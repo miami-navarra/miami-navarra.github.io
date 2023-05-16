@@ -1,10 +1,8 @@
 ---
 title: Covering Global Issues in Miami
 layout: home
-cover: assets/photo.jpg
 ---
 
-# Covering Global Issues in Miami
+That is why the **University of Miami** and the **University of Navarra** came together to cover global issues in Miami – from gentrification and housing crisis to climate change responses and immigrant incorporation.
 
-Content is written in [Markdown](https://learnxinyminutes.com/docs/markdown/).
-Plain text format allows you to focus on your **content**.
+Here you will find 6 news stories, produced during the summer of 2023, that amplify local voices, while seeking to deepen our understanding and empathy.
