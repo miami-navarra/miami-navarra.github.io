@@ -150,8 +150,7 @@ body {
   color: #ffffff;
   font-family: Syne, Helvetica, sans-serif;
   font-weight: 300;
-  margin: 6rem auto 1rem;
-  max-width: 48rem;
+  margin: 0;
   text-align: left;
 }
 
