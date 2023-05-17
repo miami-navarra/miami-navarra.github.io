@@ -10,21 +10,19 @@
   <body>
     {% include nav.html %}
 
-    <h1>{{ page.title | markdownify }}</h1>
+    <article>
+      <h1>{{ page.title | markdownify }}</h1>
 
-    <p>{{ page.lede | markdownify }}</p>
+      <p>{{ page.lede | markdownify }}</p>
 
-    <p>{{ page.date | date: '%B %-d, %Y' }}</p>
+      <p>{{ page.date | date: '%B %-d, %Y' }}</p>
 
-    <img src="{{ page.cover }}" alt="{{ page.alt }}" />
+      <img src="{{ page.cover }}" alt="{{ page.alt }}" />
 
-    {{ content }}
+      {{ content }}
+    </article>
 
-    <aside>
-      <h2>Read more</h2>
-
-      {% include stories.html %}
-    </aside>
+    <aside>{% include stories.html %}</aside>
 
     {% include footer.html %}
   </body>
