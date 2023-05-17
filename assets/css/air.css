@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,300);
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap");
 
 @media print {
   *,
@@ -148,7 +148,7 @@ textarea {
 body {
   background: #1c1d26;
   color: #ffffff;
-  font-family: "Open Sans", Helvetica, sans-serif;
+  font-family: Syne, Helvetica, sans-serif;
   font-weight: 300;
   margin: 6rem auto 1rem;
   max-width: 48rem;
