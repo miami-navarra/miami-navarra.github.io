@@ -1,0 +1,17 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .sections {
+  display: flex;
+  gap: 16px;
+}
+
+nav .sections a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+}

@@ -95,7 +95,7 @@ h3,
 h4,
 .air-h4 {
   margin: 1.414rem 0 0.5rem;
-  font-weight: inherit;
+  font-weight: bold;
   line-height: 1.42;
 }
 
@@ -162,13 +162,13 @@ img {
 
 a,
 a:visited {
-  color: #3498db;
+  color: #00bfb4;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: #2980b9;
+  opacity: 0.75;
 }
 
 pre {
