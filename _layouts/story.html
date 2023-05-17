@@ -14,10 +14,7 @@
 
     <p>{{ page.lede }}</p>
 
-    <p>
-      {% raw %}{{ page.date | date: "%B" }} {{ page.date | date: "%d" | plus:'0'
-      }}, {{ page.date | date: "%Y" }} {% endraw %}
-    </p>
+    <p>{{ page.date | date: '%B %-d, %Y' }}</p>
 
     <img src="{{ page.cover }}" alt="{{ page.alt }}" />
 
