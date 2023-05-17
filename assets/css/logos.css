@@ -1,0 +1,16 @@
+.logos {
+  display: flex;
+  gap: 16px;
+}
+
+.logo {
+  height: 64px;
+}
+
+.logo.miami {
+  aspect-ratio: 1;
+}
+
+.logo.navarra {
+  aspect-ratio: 2/1;
+}
