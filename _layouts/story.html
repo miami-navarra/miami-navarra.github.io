@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<!-- prettier-ignore -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,11 +12,15 @@
     {% include nav.html %}
 
     <article>
-      <h1>{{ page.title | markdownify }}</h1>
+      <header>
+        <h1>
+          {{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}
+        </h1>
 
-      <p>{{ page.lede | markdownify }}</p>
+        <p>{{ page.lede | markdownify }}</p>
 
-      <p>{{ page.date | date: '%B %-d, %Y' }}</p>
+        <p>{{ page.date | date: '%B %-d, %Y' }}</p>
+      </header>
 
       <img src="{{ page.cover }}" alt="{{ page.alt }}" />
 

@@ -9,16 +9,10 @@
   </head>
   <body>
     {% include nav.html %}
+
     <h1>{{ page.title }}</h1>
 
-    <!-- prettier-ignore -->
-
-    {% include intro.html %}
-
-    {{ content }}
-    
-    {% include stories.html %}
-    {% include about.html %}
-    {% include footer.html %}
+    {% include intro.html %} {{ content }} {% include stories.html %} {% include
+    about.html %} {% include footer.html %}
   </body>
 </html>
