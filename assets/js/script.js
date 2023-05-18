@@ -1,3 +1,13 @@
+mapboxgl.accessToken =
+  "pk.eyJ1IjoidnN1ZWlybyIsImEiOiJja2F4YXgxeG4wNWVqMnZxdGo2YzBwazh1In0.KwE44b2R9axBHzT9ybktoQ";
+
+const map = new mapboxgl.Map({
+  container: "map", // id
+  style: "mapbox://styles/vsueiro/clhtjemzg01xs01pe02904g3l/draft",
+  center: [0, 0],
+  zoom: 2,
+});
+
 // Initialize Scrollama
 let scroller = scrollama();
 
@@ -29,9 +39,8 @@ function handleStepEnter(response) {
 
   let p = background.querySelector("p");
 
-  console.log(response, p);
   // update graphic based on step
-  p.textContent = response.index + 1;
+  console.log(response.index);
 }
 
 function init() {
@@ -42,7 +51,7 @@ function init() {
   scroller
     .setup({
       step: "#scrolly .step",
-      offset: 0.33,
+      offset: 0.5,
       debug: true,
     })
     .onStepEnter(handleStepEnter);

@@ -11,14 +11,15 @@
 
 #background {
   background-color: #808080;
-  height: 50vh;
-  height: 50lvh;
+  height: 100vh;
+  height: 100lvh;
   left: 0;
   margin: 0;
   position: -webkit-sticky;
   position: sticky;
-  top: 25vh;
-  top: 25lvh;
+  /* top: 25vh;
+  top: 25lvh; */
+  top: 0;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -43,8 +44,8 @@
   background-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 4px magenta;
   color: #fff;
-  height: 75vh;
-  height: 75lvh;
+  height: 100vh;
+  height: 100lvh;
   margin: 0 auto;
   width: 200px;
 }
