@@ -5,7 +5,7 @@ const map = new mapboxgl.Map({
   container: "map", // id
   style: "mapbox://styles/vsueiro/clhtjemzg01xs01pe02904g3l/draft",
   center: [0, 0],
-  zoom: 2,
+  zoom: 0,
 });
 
 // Initialize Scrollama
@@ -28,8 +28,6 @@ function handleStepEnter(response) {
   // response = { element, direction, index }
 
   steps.forEach((step, index) => {
-    console.log(step);
-
     if (index === response.index) {
       step.classList.add("is-active");
     } else {
@@ -37,10 +35,30 @@ function handleStepEnter(response) {
     }
   });
 
-  let p = background.querySelector("p");
-
   // update graphic based on step
-  console.log(response.index);
+  switch (response.index) {
+    case 0:
+      map.fitBounds([
+        [-102.0, 5.7], // SW
+        [-59.0, 43.2], // NE
+      ]);
+      map.setPaintProperty("country-boundaries", "line-opacity", 1);
+      map.setPaintProperty("satellite", "raster-opacity", 0);
+      break;
+
+    case 1:
+      map.fitBounds([
+        [-102.0, 5.7], // SW
+        [-59.0, 43.2], // NE
+      ]);
+      map.setPaintProperty("country-boundaries", "line-opacity", 0);
+      map.setPaintProperty("satellite", "raster-opacity", 1);
+      break;
+
+    default:
+      map.flyTo({ center: [-20, 50], zoom: 4 });
+      break;
+  }
 }
 
 function init() {
@@ -55,6 +73,8 @@ function init() {
       debug: true,
     })
     .onStepEnter(handleStepEnter);
+
+  handleStepEnter({ index: 0 });
 }
 
 // Kick things off
