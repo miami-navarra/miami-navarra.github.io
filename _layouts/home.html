@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 
+<!-- prettier-ignore  -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://unpkg.com/scrollama" defer></script>
+    <script src="assets/js/script.js" defer></script>
   </head>
   <body>
     {% include nav.html %}
 
     <h1>{{ page.title }}</h1>
 
-    {% include intro.html %} {{ content }} {% include stories.html %} {% include
-    about.html %} {% include footer.html %}
+    <main id="scrolly-container">
+      <section id="scrolly">
+        <figure id="background">
+          <p>0</p>
+        </figure>
+
+        <article id="foreground">
+          <div class="step" data-step="1">
+            
+          </div>
+          <div class="step" data-step="2">
+            
+          </div>
+          <div class="step" data-step="3">
+            
+          </div>
+          <div class="step" data-step="4">
+            
+          </div>
+        </article>
+      </section>
+    </main>
+
+    {% include intro.html %}
+    
+    {{ content }}
+    
+    {% include stories.html %}
+    
+    {% include about.html %}
+    
+    {% include footer.html %}
   </body>
 </html>

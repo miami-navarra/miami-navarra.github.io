@@ -1,0 +1,60 @@
+#scrolly {
+  background-color: #fff;
+  position: relative;
+}
+
+#foreground {
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+#background {
+  background-color: #808080;
+  height: 50vh;
+  height: 50lvh;
+  left: 0;
+  margin: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 25vh;
+  top: 25lvh;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  width: 100%;
+  z-index: 0;
+}
+
+#background p {
+  color: #fff;
+  font-size: 8rem;
+  font-weight: 900;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.step {
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 4px magenta;
+  color: #fff;
+  height: 75vh;
+  height: 75lvh;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.step.is-active {
+  background-color: goldenrod;
+}
+
+.step p {
+  background-color: #3b3b3b;
+  margin: 0;
+  text-align: center;
+}
