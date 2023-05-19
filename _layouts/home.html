@@ -12,45 +12,77 @@
     <script src="https://unpkg.com/scrollama" defer></script>
     <script src="assets/js/script.js" defer></script>
   </head>
-  <body>
+  <body data-layout="{{ page.layout }}">
 
     {% include nav.html %}
 
-    <h1>{{ page.title }}</h1>
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col-3">
+          This content will take up 3/12 (or 1/4) of the container
+        </div>
+        <div class="col-3">
+          This content will take up 3/12 (or 1/4) of the container
+        </div>
+        <div class="col-6">
+          This content will take up 6/12 (or 1/2) of the container
+        </div>
+      </div>
+    </div> -->
 
-    <main id="scrolly-container">
+    <header class="container">
+      <div class="row">
+        <div class="col-6">
+          <h1>{{ page.title }}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <p>Lorem ipsum dolor sit amet consectetur</p>
+        </div>
+      </div>
+    </header>
+
+    <div id="scrolly-container">
       <section id="scrolly">
         <figure id="background">
           <div id="map"></div>
         </figure>
 
-        <article id="foreground">
-          <div class="step" data-step="1">
-            
+        <article id="foreground" class="container">
+          <div class="row">
+            <div class="step col-6" data-step="1">
+              <p>Climate change. Pandemics. Cultural conflicts. Social inequities.</p>
+            </div>
           </div>
-          <div class="step" data-step="2">
-            
+
+          <div class="row">
+            <div class="step col-6" data-step="2">
+              <p>The most pressing issues of our time have global roots & local impacts</p>
+            </div>
           </div>
-          <div class="step" data-step="3">
-            
+
+          <div class="row">
+            <div class="step col-6" data-step="3">
+              <p>They don’t respect borders. They require collaboration</p>
+            </div>
           </div>
-          <div class="step" data-step="4">
-            
+
+          <div class="row">
+            <div class="step col-6" data-step="4">
+              <p>That is why the <strong>University of Miami</strong> and the <strong>University of Navarra</strong> came together to cover global issues in Miami</p>
+            </div>
           </div>
         </article>
       </section>
-    </main>
-
-    <div class="noise"></div>
-
-    {% include intro.html %}
-    
-    {{ content }}
+    </div>
     
     {% include stories.html %}
     
     {% include about.html %}
     
     {% include footer.html %}
+
+    <div class="noise"></div>
   </body>
 </html>

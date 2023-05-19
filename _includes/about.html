@@ -1,15 +1,27 @@
-<div id="about">
-  <h2>About</h2>
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <header class="col-12">
+        <h2>About</h2>
+      </header>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <p>Text about the project goes here.</p>
+        <p>A list of participants go here.</p>
+      </div>
+    </div>
 
-  <p>Text about the project goes here.</p>
-
-  <p>A list of participants go here.</p>
-
-  <ul>
-    {% for person in site.data.people %}
-    <li>
-      <a href="{{ person.url }}">{{ person.name }}, {{ person.role }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
+    <div class="row">
+      <div class="col-12">
+        <ul>
+          {% for person in site.data.people %}
+          <li>
+            <a href="{{ person.url }}">{{ person.name }}, {{ person.role }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

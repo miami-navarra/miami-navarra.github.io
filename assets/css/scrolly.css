@@ -1,3 +1,11 @@
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+  background: transparent;
+}
+
+.mapboxgl-ctrl-attrib a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 #scrolly {
   position: relative;
 }
@@ -14,8 +22,8 @@
   height: 100lvh;
   left: 0;
   margin: 0;
-  /* position: -webkit-sticky; */
-  /* position: sticky; */
+  position: -webkit-sticky;
+  position: sticky;
   position: fixed;
   /* top: 25vh;
   top: 25lvh; */
@@ -24,7 +32,7 @@
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   width: 100%;
-  z-index: -1;
+  z-index: 0;
 }
 
 #background p {
@@ -41,21 +49,20 @@
 }
 
 .step {
-  background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 4px magenta;
-  color: #fff;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   height: 100lvh;
-  margin: 0 auto;
-  width: 200px;
+  justify-content: center;
+  opacity: 0.2;
+  transition: all 0.4s;
 }
 
 .step.is-active {
-  background-color: goldenrod;
+  opacity: 1;
 }
 
-.step p {
-  background-color: #3b3b3b;
+.step .content {
+  backdrop-filter: blur(8px);
   margin: 0;
-  text-align: center;
 }

@@ -7,6 +7,7 @@
   top: 0;
   mix-blend-mode: screen;
   mix-blend-mode: color-dodge;
+  z-index: 2;
 }
 
 .noise::before,

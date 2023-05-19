@@ -6,6 +6,7 @@ const map = new mapboxgl.Map({
   style: "mapbox://styles/vsueiro/clhtjemzg01xs01pe02904g3l/draft",
   center: [0, 0],
   zoom: 0,
+  interactive: false,
 });
 
 // Initialize Scrollama
@@ -70,7 +71,7 @@ function init() {
     .setup({
       step: "#scrolly .step",
       offset: 0.5,
-      debug: true,
+      debug: false,
     })
     .onStepEnter(handleStepEnter);
 

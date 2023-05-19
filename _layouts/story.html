@@ -8,7 +8,7 @@
     <title>{{ page.title | markdownify | strip_html }}</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
+  <body data-layout="{{ page.layout }}">
     {% include nav.html %}
 
     <article>
