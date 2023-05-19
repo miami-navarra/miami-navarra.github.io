@@ -1,5 +1,4 @@
 #scrolly {
-  background-color: #fff;
   position: relative;
 }
 
@@ -25,7 +24,7 @@
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   width: 100%;
-  z-index: 0;
+  z-index: -1;
 }
 
 #background p {

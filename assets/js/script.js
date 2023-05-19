@@ -43,7 +43,7 @@ function handleStepEnter(response) {
         [-59.0, 43.2], // NE
       ]);
       map.setPaintProperty("country-boundaries", "line-opacity", 1);
-      map.setPaintProperty("satellite", "raster-opacity", 0);
+      map.setPaintProperty("satellite", "raster-opacity", 0.1);
       break;
 
     case 1:
@@ -52,7 +52,7 @@ function handleStepEnter(response) {
         [-59.0, 43.2], // NE
       ]);
       map.setPaintProperty("country-boundaries", "line-opacity", 0);
-      map.setPaintProperty("satellite", "raster-opacity", 1);
+      map.setPaintProperty("satellite", "raster-opacity", 0.5);
       break;
 
     default:
