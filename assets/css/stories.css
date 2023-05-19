@@ -2,10 +2,17 @@
   position: relative;
   z-index: 1;
   background: var(--neutral-100);
+  color: var(--neutral-900);
 }
 
 #stories ul {
   list-style: none;
   margin: 0 auto;
   padding: 0;
+}
+
+#stories a img {
+  aspect-ratio: 1/1;
+  max-width: 300px;
+  object-fit: cover;
 }

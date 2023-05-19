@@ -65,3 +65,8 @@ blockquote {
   padding: 1em;
   text-align: left;
 }
+
+[data-layout="story"] {
+  background: var(--neutral-900);
+  color: var(--neutral-50);
+}

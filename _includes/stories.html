@@ -21,6 +21,8 @@
       <li class="row">
         <div class="col-12">
           <a href="{{ post.url }}">
+            <img src="{{ post.cover }}" alt="{{ post.alt }}">
+
             {{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}
           </a>
         </div>
