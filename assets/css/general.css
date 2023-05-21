@@ -53,9 +53,9 @@ a:visited {
   color: #00bfb4;
 }
 
-a:hover,
-a:focus,
-a:active {
+a:not(.logo):hover,
+a:not(.logo):focus,
+a:not(.logo):active {
   opacity: 0.75;
 }
 

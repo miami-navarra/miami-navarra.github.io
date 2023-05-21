@@ -5,6 +5,8 @@
 
 .logo {
   height: 64px;
+  position: relative;
+  transition: none;
 }
 
 .logo.miami {
@@ -13,4 +15,41 @@
 
 .logo.navarra {
   aspect-ratio: 2/1;
+}
+
+.logo::before {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.2s linear;
+  opacity: 0;
+}
+
+.logo img {
+  transition: opacity 0.2s linear;
+}
+
+.logo.miami::before {
+  background-image: url(../images/miami-color.png);
+}
+
+.logo.navarra::before {
+  background-image: url(../images/navarra-color.png);
+}
+
+.logo:hover {
+  opacity: 1;
+}
+
+.logo:hover::before {
+  opacity: 1;
+}
+
+.logo:hover img {
+  opacity: 0;
 }
