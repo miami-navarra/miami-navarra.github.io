@@ -1,5 +1,13 @@
 nav {
-  border-bottom: 1px solid var(--neutral-200);
+  position: relative;
+  z-index: 2;
+}
+
+nav .container {
+  /* border-bottom: 1px solid var(--neutral-200); */
+}
+
+[data-layout="home"] nav {
   left: 0;
   position: absolute;
   right: 0;

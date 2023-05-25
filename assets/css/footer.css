@@ -1,0 +1,7 @@
+footer .logos {
+  justify-content: center;
+}
+
+[data-layout="story"] footer {
+  background: var(--neutral-50);
+}

@@ -13,18 +13,40 @@
 
     <article>
       <header>
-        <h1>
-          {{ page.title | markdownify | remove: '<p>' | remove: '</p>' }}
-        </h1>
-
-        <p>{{ page.lede | markdownify }}</p>
-
-        <p>{{ page.date | date: '%B %-d, %Y' }}</p>
+        <div class="container">
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <h1>
+                {{ page.title | markdownify | remove: '<p>' | remove: '</p>' }}
+              </h1>
+              {{ page.lede | markdownify }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <figure>
+                <img src="{{ page.cover }}" alt="{{ page.alt }}" />
+                <figcaption>Lorem ipsum dolor site amet consectetur</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <p>{{ page.date | date: '%B %-d, %Y' }}</p>
+            </div>
+            <div class="col-6">
+              <p>{{ page.authors }}</p>
+            </div>
+          </div>
+          
+        </div>
       </header>
 
-      <img src="{{ page.cover }}" alt="{{ page.alt }}" />
+      <div class="container story-container">
+        {{ content }}
+      </div>
 
-      {{ content }}
     </article>
 
     <aside>{% include stories.html %}</aside>

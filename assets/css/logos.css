@@ -3,10 +3,6 @@
   gap: 32px;
 }
 
-footer .logos {
-  justify-content: center;
-}
-
 .logo {
   height: 64px;
   position: relative;
