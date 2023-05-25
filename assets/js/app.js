@@ -2,6 +2,8 @@ const app = {
   mapbox: {
     token:
       "pk.eyJ1IjoidnN1ZWlybyIsImEiOiJja2F4YXgxeG4wNWVqMnZxdGo2YzBwazh1In0.KwE44b2R9axBHzT9ybktoQ",
+    id: "map",
+    style: "mapbox://styles/vsueiro/clhtjemzg01xs01pe02904g3l/draft",
     map: undefined,
     participants: {
       draw: function () {
@@ -32,14 +34,17 @@ const app = {
       mapboxgl.accessToken = app.mapbox.token;
 
       app.mapbox.map = new mapboxgl.Map({
-        container: "map", // id
-        style: "mapbox://styles/vsueiro/clhtjemzg01xs01pe02904g3l/draft",
+        container: app.mapbox.id,
+        style: app.mapbox.style,
         center: [0, 0],
         zoom: 0,
         interactive: false,
       });
 
-      app.mapbox.map.on("load", app.mapbox.participants.draw);
+      app.mapbox.map.on("load", () => {
+        app.scrollama.handleStepEnter({ index: 0 });
+        app.mapbox.participants.draw();
+      });
     },
   },
 
@@ -71,7 +76,6 @@ const app = {
         }
       });
 
-      // update graphic based on step
       switch (response.index) {
         case 0:
           app.mapbox.map.fitBounds([
@@ -117,8 +121,6 @@ const app = {
           debug: false,
         })
         .onStepEnter(app.scrollama.handleStepEnter);
-
-      // app.scrollama.handleStepEnter({ index: 0 });
     },
   },
 
