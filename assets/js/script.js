@@ -9,6 +9,53 @@ const map = new mapboxgl.Map({
   interactive: false,
 });
 
+const participants = [
+  {
+    type: "geojson",
+    data: {
+      type: "Feature",
+      properties: {
+        id: "student-name",
+        name: "Sudent Name",
+        role: "(Student|Faculty)",
+      },
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [3.770298503497429, 48.07805653586345],
+          [-0.9997653420810764, 42.472071423130586],
+          [-80.32002288539272, 25.840106299241327],
+        ],
+      },
+    },
+  },
+];
+
+map.on("load", () => {
+  for (let participant of participants) {
+    const id = participant.data.properties.id;
+    map.addSource(id, participant);
+
+    const options = {
+      id: id,
+      type: "line",
+      source: id,
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
+      paint: {
+        "line-color": "#f0f", //""#ed7351",
+        "line-width": 2,
+        "line-opacity": 0.2,
+      },
+      cd,
+    };
+
+    map.addLayer(options);
+  }
+});
+
 // Initialize Scrollama
 let scroller = scrollama();
 
