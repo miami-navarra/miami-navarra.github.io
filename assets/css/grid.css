@@ -1,3 +1,25 @@
+/* Modified from: https://simplegrid.io/ */
+
+/* POSITIONING */
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify {
+  text-align: justify;
+}
+
 .container {
   width: 90%;
   margin-left: auto;

@@ -2,33 +2,26 @@
 
 <section id="stories">
 
-  <div class="container">
+  <header>
     <div class="row">
-      <div class="col-12">
+      <div class="step col-12" data-step="4">
         <h2>Stories</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6">
         <p>From gentrification and housing crisis to climate change responses and immigrant incorporation, here you will find {{ site.posts | size }} news stories, produced during the summer of 2023, that amplify local voices, while seeking to deepen our understanding and empathy.</p>  
       </div>
     </div>
-  </div>
-  
-  <ul class="container">
-    {% for post in site.posts %}
-      {% if page.url != post.url %}
-      <li class="row">
-        <div class="col-12">
-          <a href="{{ post.url }}">
-            <img src="{{ post.cover }}" alt="{{ post.alt }}">
+  </header>
 
-            {{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}
-          </a>
-        </div>
-      </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-  
+  {% for post in site.posts %}
+    {% if page.url != post.url %}
+    <div class="row">
+      <div class="step col-12">
+        <a href="{{ post.url }}">
+          <img src="{{ post.cover }}" alt="{{ post.alt }}">
+          <h3>{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</h3>
+        </a>
+      </div>
+    </div>
+    {% endif %}
+  {% endfor %}
+
 </section>
