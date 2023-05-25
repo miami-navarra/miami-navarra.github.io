@@ -3,6 +3,10 @@
   gap: 32px;
 }
 
+footer .logos {
+  justify-content: center;
+}
+
 .logo {
   height: 64px;
   position: relative;
@@ -23,11 +27,11 @@
   bottom: 0;
   content: "";
   left: 0;
+  opacity: 0;
   position: absolute;
   right: 0;
   top: 0;
   transition: opacity 0.2s linear;
-  opacity: 0;
 }
 
 .logo img {

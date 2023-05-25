@@ -1,33 +1,33 @@
 .noise {
   bottom: 0;
   left: 0;
+  mix-blend-mode: screen;
+  mix-blend-mode: color-dodge;
   pointer-events: none;
   position: fixed;
   right: 0;
   top: 0;
-  mix-blend-mode: screen;
-  mix-blend-mode: color-dodge;
   z-index: 2;
 }
 
 .noise::before,
 .noise::after {
-  content: "";
+  background-repeat: repeat;
   bottom: 0;
+  content: "";
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  background-repeat: repeat;
 }
 
 .noise::before {
-  background-image: url(../images/dust-compressed.jpg);
-  background-size: calc(816px * 0.666);
-  opacity: 1;
   animation: rotateTexture 0.4s steps(2) infinite;
   backdrop-filter: invert(1);
+  background-image: url(../images/dust-compressed.jpg);
+  background-size: calc(816px * 0.666);
   image-rendering: pixelated;
+  opacity: 1;
 }
 
 @keyframes rotateTexture {

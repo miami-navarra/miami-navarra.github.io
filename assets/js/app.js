@@ -78,32 +78,44 @@ const app = {
 
       switch (response.index) {
         case 0:
+          // Fit around Florida
           app.mapbox.map.fitBounds([
             [-102.0, 5.7], // SW
             [-59.0, 43.2], // NE
           ]);
+          // Show country borders
           app.mapbox.map.setPaintProperty(
             "country-boundaries",
             "line-opacity",
             1
           );
+          // Make satellite images subtle
           app.mapbox.map.setPaintProperty("satellite", "raster-opacity", 0.1);
           break;
 
         case 1:
+          // Fit around Florida
           app.mapbox.map.fitBounds([
             [-102.0, 5.7], // SW
             [-59.0, 43.2], // NE
           ]);
+          // Hide country borders
           app.mapbox.map.setPaintProperty(
             "country-boundaries",
             "line-opacity",
             0
           );
+          // Make satellite images evident
           app.mapbox.map.setPaintProperty("satellite", "raster-opacity", 0.5);
           break;
 
+        case 2:
+          // Fly to Government Center
+          app.mapbox.map.flyTo({ center: [-80.1989621, 25.7755419], zoom: 12 });
+          break;
+
         default:
+          // Fly somewhere else
           app.mapbox.map.flyTo({ center: [-20, 50], zoom: 4 });
           break;
       }

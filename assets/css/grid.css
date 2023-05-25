@@ -11,9 +11,9 @@
 }
 
 .center {
-  text-align: center;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .justify {
@@ -21,10 +21,10 @@
 }
 
 .container {
-  width: 90%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  width: 90%;
   z-index: 1;
 }
 
@@ -103,9 +103,9 @@
 }
 
 .row::after {
+  clear: both;
   content: "";
   display: table;
-  clear: both;
 }
 
 .hidden-sm {
@@ -177,8 +177,8 @@
 @media (min-width: 60em) {
   /* 960px */
   .container {
-    width: 90%;
     max-width: 1280px;
+    width: 90%;
     /* max-width: 60rem; */
   }
 }

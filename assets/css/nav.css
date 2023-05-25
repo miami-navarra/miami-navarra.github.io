@@ -1,11 +1,15 @@
 nav {
   border-bottom: 1px solid var(--neutral-200);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .nav-items {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 nav .sections {
@@ -14,10 +18,10 @@ nav .sections {
 }
 
 nav .sections a {
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: bold;
   color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 [data-layout="story"] nav {

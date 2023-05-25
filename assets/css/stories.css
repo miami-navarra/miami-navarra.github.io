@@ -1,8 +1,11 @@
+[data-layout="story"] #stories {
+  background: var(--neutral-100);
+  color: var(--neutral-900);
+}
+
 #stories {
   position: relative;
   z-index: 1;
-  background: var(--neutral-100);
-  color: var(--neutral-900);
 }
 
 #stories ul {
@@ -11,8 +14,20 @@
   padding: 0;
 }
 
+#stories a:hover {
+  opacity: 1;
+}
+
 #stories a img {
   aspect-ratio: 1/1;
-  max-width: 300px;
+  max-width: 100%;
   object-fit: cover;
+}
+
+#stories a:hover {
+  opacity: 1;
+}
+
+#stories a:hover img {
+  box-shadow: 0 0 0 4px var(--secondary-100);
 }

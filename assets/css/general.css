@@ -60,8 +60,8 @@ a:not(.logo):active {
 }
 
 blockquote {
-  margin: 0;
   border-left: 2px solid var(--neutral-60);
+  margin: 0;
   padding: 1em;
   text-align: left;
 }
