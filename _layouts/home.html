@@ -8,9 +8,12 @@
     <title>{{ page.title }}</title>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet"/>
     <link href="assets/css/style.css" rel="stylesheet"/>
+
+    {% include participants-routes.html %}
+    
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js" defer></script>
     <script src="https://unpkg.com/scrollama" defer></script>
-    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
   </head>
   <body data-layout="{{ page.layout }}">
 
