@@ -5,7 +5,7 @@
   <header>
     <div class="row">
       <div class="col-3"></div>
-      <div class="step col-6" data-step="4">
+      <div class="step col-6" data-step="" data-lon="-80.1989621" data-lat="25.7755419" data-zoom="11">
         <h2 class="center">Stories</h2>
         <p>From gentrification and housing crisis to climate change responses and immigrant incorporation, here you will find {{ site.posts | size }} news stories, produced during the summer of 2023, that amplify local voices, while seeking to deepen our understanding and empathy.</p>  
       </div>
@@ -15,7 +15,7 @@
   {% for post in site.posts %}
     {% if page.url != post.url %}
     <div class="row">
-      <div class="col-12 step" data-step="">
+      <div class="col-12 step" data-step="" data-lon="{{ post.lon }}" data-lat="{{ post.lat }}" data-zoom="14">
         <a href="{{ post.url }}">
           <div class="row">
             <div class="col-1"></div>

@@ -77,6 +77,28 @@ const app = {
         }
       });
 
+      if (
+        response.element &&
+        response.element.dataset.lon &&
+        response.element.dataset.lat
+      ) {
+        const lon = parseFloat(response.element.dataset.lon);
+        const lat = parseFloat(response.element.dataset.lat);
+        const zoom = parseInt(response.element.dataset.zoom);
+
+        app.mapbox.map.flyTo({ center: [lon, lat], zoom: zoom });
+
+        // Hide country borders
+        app.mapbox.map.setPaintProperty(
+          "country-boundaries",
+          "line-opacity",
+          0
+        );
+        // Make satellite images evident
+        app.mapbox.map.setPaintProperty("satellite", "raster-opacity", 0.5);
+        return;
+      }
+
       switch (response.index) {
         case 0:
           // Fit around Florida
@@ -115,9 +137,16 @@ const app = {
           app.mapbox.map.flyTo({ center: [-80.1989621, 25.7755419], zoom: 12 });
           break;
 
+        case 3:
+          app.mapbox.map.flyTo({ center: [-45, 30], zoom: 2 });
+          break;
+
         default:
           // Fly somewhere else
-          app.mapbox.map.flyTo({ center: [-20, 50], zoom: 4 });
+          const lon = Math.random() * 180 * 2 - 180;
+          const lat = Math.random() * 90 * 2 - 90;
+          const zoom = Math.floor(Math.random() * 12);
+          app.mapbox.map.flyTo({ center: [lon, lat], zoom: zoom });
           break;
       }
     },
