@@ -12,7 +12,7 @@
     </div>
   </header>
 
-  {% for post in site.posts %}
+  {% for post in site.posts reversed %}
     {% if page.url != post.url %}
     <div class="row">
       <div class="col-12 step" data-step="" data-lon="{{ post.lon }}" data-lat="{{ post.lat }}" data-zoom="14">
