@@ -6,6 +6,18 @@ const app = {
     style: "mapbox://styles/vsueiro/clhtjemzg01xs01pe02904g3l/draft",
     map: undefined,
     participants: {
+      show: function () {
+        for (let participant of participants) {
+          const id = participant.data.properties.id;
+          app.mapbox.map.setPaintProperty(id, "line-opacity", 0.2);
+        }
+      },
+      hide: function () {
+        for (let participant of participants) {
+          const id = participant.data.properties.id;
+          app.mapbox.map.setPaintProperty(id, "line-opacity", 0);
+        }
+      },
       draw: function () {
         for (let participant of participants) {
           const id = participant.data.properties.id;
@@ -23,7 +35,7 @@ const app = {
             paint: {
               "line-color": role === "Student" ? "#ed7351" : "#00bfb4",
               "line-width": 2,
-              "line-opacity": 0.1,
+              "line-opacity": 0,
             },
           };
 
@@ -96,6 +108,8 @@ const app = {
         );
         // Make satellite images evident
         app.mapbox.map.setPaintProperty("satellite", "raster-opacity", 0.5);
+        // Hide paths
+        app.mapbox.participants.hide();
         return;
       }
 
@@ -114,6 +128,8 @@ const app = {
           );
           // Make satellite images subtle
           app.mapbox.map.setPaintProperty("satellite", "raster-opacity", 0.1);
+          // Hide paths
+          app.mapbox.participants.hide();
           break;
 
         case 1:
@@ -130,15 +146,21 @@ const app = {
           );
           // Make satellite images evident
           app.mapbox.map.setPaintProperty("satellite", "raster-opacity", 0.5);
+          // Hide paths
+          app.mapbox.participants.hide();
           break;
 
         case 2:
           // Fly to Government Center
           app.mapbox.map.flyTo({ center: [-80.1989621, 25.7755419], zoom: 12 });
+          // Hide paths
+          app.mapbox.participants.hide();
           break;
 
         case 3:
           app.mapbox.map.flyTo({ center: [-45, 30], zoom: 2 });
+          // Show paths
+          app.mapbox.participants.show();
           break;
 
         default:
@@ -169,6 +191,10 @@ const app = {
   initialize: function () {
     app.scrollama.initialize();
     app.mapbox.initialize();
+
+    setTimeout(() => {
+      document.body.classList.add("initialized");
+    }, 500);
   },
 };
 
