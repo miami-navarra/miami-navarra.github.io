@@ -9,21 +9,25 @@
     {% assign coordinates = row["Coordinates (lon,lat)"] %}
     {% assign role = row["Role"] %}
 
-    {
-      type: "geojson",
-      data: {
-        type: "Feature",
-        properties: {
-          id: "{{ name || slugify }}",
-          name: "{{ name }}",
-          role: "{{ role }}",
-        },
-        geometry: {
-          type: "LineString",
-          coordinates: {{ coordinates }},
+    {% if coordinates %}
+
+      {
+        type: "geojson",
+        data: {
+          type: "Feature",
+          properties: {
+            id: "{{ name || slugify }}",
+            name: "{{ name }}",
+            role: "{{ role }}",
+          },
+          geometry: {
+            type: "LineString",
+            coordinates: {{ coordinates }},
+          },
         },
       },
-    },
+
+    {% endif %}
     
   {% endfor %}
 

@@ -9,6 +9,7 @@ const app = {
       draw: function () {
         for (let participant of participants) {
           const id = participant.data.properties.id;
+          const role = participant.data.properties.role;
           app.mapbox.map.addSource(id, participant);
 
           const options = {
@@ -20,9 +21,9 @@ const app = {
               "line-cap": "round",
             },
             paint: {
-              "line-color": "#f0f", //""#ed7351",
+              "line-color": role === "Student" ? "#ed7351" : "#00bfb4",
               "line-width": 2,
-              "line-opacity": 0.2,
+              "line-opacity": 0.1,
             },
           };
 
