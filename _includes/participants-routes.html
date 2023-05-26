@@ -1,23 +1,31 @@
+<!-- prettier-ignore -->
+
 <script>
   const participants = [
+
+  {% for row in site.data.participants %}
+
+    {% assign name = row["Full Name"] %}
+    {% assign coordinates = row["Coordinates (lon,lat)"] %}
+    {% assign role = row["Role"] %}
+
     {
       type: "geojson",
       data: {
         type: "Feature",
         properties: {
-          id: "student-name",
-          name: "Sudent Name",
-          role: "(Student|Faculty)",
+          id: "{{ name || slugify }}",
+          name: "{{ name }}",
+          role: "{{ role }}",
         },
         geometry: {
           type: "LineString",
-          coordinates: [
-            [3.770298503497429, 48.07805653586345],
-            [-0.9997653420810764, 42.472071423130586],
-            [-80.32002288539272, 25.840106299241327],
-          ],
+          coordinates: {{ coordinates }},
         },
       },
     },
+    
+  {% endfor %}
+
   ];
 </script>
