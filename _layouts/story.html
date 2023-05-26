@@ -27,16 +27,16 @@
             <div class="col-12">
               <figure>
                 <img src="{{ page.cover }}" alt="{{ page.alt }}" />
-                <figcaption>Lorem ipsum dolor site amet consectetur</figcaption>
+                <figcaption>{{ page.caption }}</figcaption>
               </figure>
             </div>
           </div>
           <div class="row">
             <div class="col-3">
-              <p>{{ page.date | date: '%B %-d, %Y' }}</p>
+              <p>Published on {{ page.date | date: '%B %-d, %Y' }}</p>
             </div>
             <div class="col-6">
-              <p>{{ page.authors }}</p>
+              <p>By {{ page.authors }}</p>
             </div>
           </div>
           
