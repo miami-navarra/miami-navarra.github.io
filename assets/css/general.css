@@ -10,6 +10,11 @@ body {
   color: var(--neutral-900);
   font-family: Syne, Helvetica, sans-serif;
   font-weight: 400;
+  transition: opacity 1s;
+}
+
+body.initialized {
+  opacity: 1 !important;
 }
 
 h1 {
