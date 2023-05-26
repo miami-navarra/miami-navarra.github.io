@@ -55,7 +55,7 @@ const app = {
       });
 
       app.mapbox.map.on("load", () => {
-        app.scrollama.handleStepEnter({ index: 0 });
+        app.scrollama.handleStepEnter();
         app.mapbox.participants.draw();
       });
     },
@@ -80,7 +80,15 @@ const app = {
     // Handle Scrollama events
     handleStepEnter: function (response) {
       // response = { element, direction, index }
+      const first = {
+        element: app.scrollama.elements.steps[0],
+        direction: "up",
+        index: 0,
+      };
 
+      response = response || first;
+
+      // Activate current step
       app.scrollama.elements.steps.forEach((step, index) => {
         if (index === response.index) {
           step.classList.add("is-active");
@@ -89,14 +97,11 @@ const app = {
         }
       });
 
-      if (
-        response.element &&
-        response.element.dataset.lon &&
-        response.element.dataset.lat
-      ) {
+      // If there is a coordinate defined
+      if (response.element.dataset.lon && response.element.dataset.lat) {
         const lon = parseFloat(response.element.dataset.lon);
         const lat = parseFloat(response.element.dataset.lat);
-        const zoom = parseInt(response.element.dataset.zoom);
+        const zoom = parseInt(response.element.dataset.zoom) || 10;
 
         app.mapbox.map.flyTo({ center: [lon, lat], zoom: zoom });
 
@@ -110,11 +115,10 @@ const app = {
         app.mapbox.map.setPaintProperty("satellite", "raster-opacity", 0.5);
         // Hide paths
         app.mapbox.participants.hide();
-        return;
       }
 
-      switch (response.index) {
-        case 0:
+      switch (response.element.dataset.step) {
+        case "cover":
           // Fit around Florida
           app.mapbox.map.fitBounds([
             [-102.0, 5.7], // SW
@@ -132,7 +136,7 @@ const app = {
           app.mapbox.participants.hide();
           break;
 
-        case 1:
+        case "global-roots":
           // Fit around Florida
           app.mapbox.map.fitBounds([
             [-102.0, 5.7], // SW
@@ -150,25 +154,26 @@ const app = {
           app.mapbox.participants.hide();
           break;
 
-        case 2:
+        case "borders":
           // Fly to Government Center
           app.mapbox.map.flyTo({ center: [-80.1989621, 25.7755419], zoom: 12 });
           // Hide paths
           app.mapbox.participants.hide();
           break;
 
-        case 3:
+        case "collaboration":
+          app.mapbox.map.flyTo({ center: [-45, 30], zoom: 2 });
+          // Show paths
+          app.mapbox.participants.show();
+          break;
+
+        case "about":
           app.mapbox.map.flyTo({ center: [-45, 30], zoom: 2 });
           // Show paths
           app.mapbox.participants.show();
           break;
 
         default:
-          // Fly somewhere else
-          const lon = Math.random() * 180 * 2 - 180;
-          const lat = Math.random() * 90 * 2 - 90;
-          const zoom = Math.floor(Math.random() * 12);
-          app.mapbox.map.flyTo({ center: [lon, lat], zoom: zoom });
           break;
       }
     },
