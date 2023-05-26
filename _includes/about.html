@@ -10,16 +10,54 @@
     >
       <header>
         <h2 class="center">About</h2>
-        <p>Text about the project goes here.</p>
       </header>
 
-      <p>A list of participants go here.</p>
+      <p>
+        Covering Global Issues in Miami guides students on an intellectual and
+        experiential journey of discovery, experimentation and learning about
+        grounded globalization and how it could or should be communicated.
+      </p>
+      <p>
+        Fortified with this knowledge, students practice their technical and
+        critical storytelling skills in collaborative, multimedia journalism
+        projects that have the potential to facilitate wider understanding and
+        action.
+      </p>
 
-      <ul>
-        {% for person in site.data.people %}
-        <li>
-          <a href="{{ person.url }}">{{ person.name }}, {{ person.role }}</a>
-        </li>
+      <h3>Students</h3>
+
+      <!-- prettier-ignore -->
+      <ul class="students">
+        {% for row in site.data.participants %}
+
+          {% assign name = row["Full Name"] %}
+          {% assign role = row["Role"] %}
+
+          {% if role == "Student" %}
+          <li>
+            {{ name }}
+          </li>
+          {% endif %}
+
+        {% endfor %}
+      </ul>
+
+      <h3>Faculty</h3>
+
+      <!-- prettier-ignore -->
+      <ul class="faculty">
+        {% for row in site.data.participants %}
+
+          {% assign name = row["Full Name"] %}
+          {% assign role = row["Role"] %}
+          {% assign position = row["Position"] %}
+
+          {% if role == "Faculty" %}
+          <li>
+            {{ name }}, <span class="details">{{ position }}</span>
+          </li>
+          {% endif %}
+
         {% endfor %}
       </ul>
 

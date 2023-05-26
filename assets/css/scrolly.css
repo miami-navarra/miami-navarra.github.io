@@ -51,11 +51,16 @@
 .step {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  height: 100lvh;
+  min-height: 100vh !important;
+  min-height: 100lvh !important;
   justify-content: center;
   opacity: 0.2;
   transition: all 0.4s;
+}
+
+[data-layout="story"] .step {
+  height: initial;
+  opacity: 1;
 }
 
 .step.is-active {

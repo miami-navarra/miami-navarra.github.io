@@ -1,0 +1,14 @@
+button,
+.button {
+  all: unset;
+}
+
+.button {
+  position: relative;
+  border: 2px solid currentColor;
+  color: var(--secondary-100);
+  padding: 8px 16px;
+  text-align: uppercase;
+  font-weight: bold;
+  text-transform: uppercase;
+}

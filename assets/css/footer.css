@@ -1,3 +1,7 @@
+footer {
+  padding: 3em 0;
+}
+
 footer .logos {
   justify-content: center;
 }

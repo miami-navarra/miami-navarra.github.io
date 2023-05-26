@@ -2,3 +2,31 @@
   position: relative;
   z-index: 1;
 }
+
+#about ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#about ul.students {
+  column-count: 3;
+}
+
+#about li {
+  border-top: 0px solid;
+  break-inside: avoid;
+  padding: 12px 0;
+}
+
+#about ul.faculty span {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  opacity: 0.75;
+}
+
+#about h3 {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  opacity: 0.75;
+}

@@ -197,6 +197,8 @@ const app = {
     app.scrollama.initialize();
     app.mapbox.initialize();
 
+    window.scrollTo(0, 0);
+
     setTimeout(() => {
       document.body.classList.add("initialized");
     }, 500);

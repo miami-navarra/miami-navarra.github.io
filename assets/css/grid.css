@@ -24,7 +24,7 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  width: 90%;
+  width: 96%;
   z-index: 1;
 }
 
@@ -120,13 +120,13 @@
 
 @media (min-width: 33.75em) {
   /* 540px */
-  .container {
+  /* .container {
     width: 80%;
-  }
+  } */
 }
 
-@media (min-width: 60em) {
-  /* 960px */
+@media (min-width: 64em) {
+  /* 1240px */
   .col-1 {
     width: 4.33%;
   }
@@ -188,7 +188,7 @@
   /* 1280px */
   .container {
     max-width: 1280px;
-    width: 90%;
+    /* width: 90%; */
     /* max-width: 60rem; */
   }
 }
