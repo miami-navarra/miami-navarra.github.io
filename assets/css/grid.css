@@ -54,7 +54,7 @@
   width: 96%;
 }
 
-.story-container > *:not([class^="col-"]) {
+.story-container > *:not([class^="col-"], [class^="row"]) {
   width: 96%;
   margin-left: auto;
   margin-right: auto;
@@ -151,12 +151,12 @@
     width: 46%;
   }
 
-  .story-container > *:not([class^="col-"]) {
-    width: 46%;
-  }
-
   .col-7 {
     width: 54.33%;
+  }
+
+  .story-container > *:not([class^="col-"], [class^="row"]) {
+    width: 62.66%;
   }
 
   .col-8 {
