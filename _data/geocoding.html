@@ -5,7 +5,9 @@
     <title>Geocoding</title>
   </head>
   <body>
-    <pre id="log" style="user-select: none">Loading</pre>
+    <button>Start Geocoding!</button>
+
+    <pre id="log" style="user-select: none">…</pre>
     <pre id="output" style="user-select: all">…</pre>
 
     <script>
@@ -14,7 +16,8 @@
       const sleep = 2000;
 
       const routes = [
-        "Santana de Parnaíba, Brazil; São Paulo, Brazil; Miami, US",
+        "Washington, DC, US; St. Louis, MO, US; Cali, Colombia; Miami, US",
+        "Nassau, Bahamas; Miami, US",
       ];
 
       let results = [];
@@ -81,7 +84,11 @@
         }
       }
 
-      geocode(currentRoute, currentCity);
+      const button = document.querySelector("button");
+
+      button.onclick = () => {
+        geocode(currentRoute, currentCity);
+      };
     </script>
   </body>
 </html>
