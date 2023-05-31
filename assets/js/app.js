@@ -13,7 +13,7 @@ const app = {
       show: function () {
         for (let participant of participants) {
           const id = participant.data.properties.id;
-          if (map.getLayer(id)) {
+          if (app.mapbox.map.getLayer(id)) {
             app.mapbox.map.setPaintProperty(id, "line-opacity", 0.2);
           }
         }
@@ -21,7 +21,7 @@ const app = {
       hide: function () {
         for (let participant of participants) {
           const id = participant.data.properties.id;
-          if (map.getLayer(id)) {
+          if (app.mapbox.map.getLayer(id)) {
             app.mapbox.map.setPaintProperty(id, "line-opacity", 0);
           }
         }
