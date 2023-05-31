@@ -1,4 +1,8 @@
 const app = {
+  isSmall: () => {
+    return window.innerWidth < 960;
+  },
+
   mapbox: {
     token:
       "pk.eyJ1IjoidnN1ZWlybyIsImEiOiJja2F4YXgxeG4wNWVqMnZxdGo2YzBwazh1In0.KwE44b2R9axBHzT9ybktoQ",
@@ -9,13 +13,17 @@ const app = {
       show: function () {
         for (let participant of participants) {
           const id = participant.data.properties.id;
-          app.mapbox.map.setPaintProperty(id, "line-opacity", 0.2);
+          if (map.getLayer(id)) {
+            app.mapbox.map.setPaintProperty(id, "line-opacity", 0.2);
+          }
         }
       },
       hide: function () {
         for (let participant of participants) {
           const id = participant.data.properties.id;
-          app.mapbox.map.setPaintProperty(id, "line-opacity", 0);
+          if (map.getLayer(id)) {
+            app.mapbox.map.setPaintProperty(id, "line-opacity", 0);
+          }
         }
       },
       draw: function () {
@@ -43,6 +51,18 @@ const app = {
         }
       },
     },
+    adjustZoom: (idealZoom) => {
+      if (idealZoom === 0) {
+        return idealZoom;
+      }
+
+      if (app.isSmall()) {
+        return idealZoom * 0.5;
+      }
+
+      return idealZoom;
+    },
+
     initialize: function () {
       mapboxgl.accessToken = app.mapbox.token;
 
@@ -50,7 +70,7 @@ const app = {
         container: app.mapbox.id,
         style: app.mapbox.style,
         center: [0, 0],
-        zoom: 0,
+        zoom: app.mapbox.adjustZoom(0),
         interactive: false,
       });
 
@@ -101,7 +121,9 @@ const app = {
       if (response.element.dataset.lon && response.element.dataset.lat) {
         const lon = parseFloat(response.element.dataset.lon);
         const lat = parseFloat(response.element.dataset.lat);
-        const zoom = parseInt(response.element.dataset.zoom) || 10;
+        let zoom = parseInt(response.element.dataset.zoom) || 10;
+
+        zoom = app.mapbox.adjustZoom(zoom);
 
         app.mapbox.map.flyTo({ center: [lon, lat], zoom: zoom });
 
@@ -156,19 +178,28 @@ const app = {
 
         case "borders":
           // Fly to Government Center
-          app.mapbox.map.flyTo({ center: [-80.1989621, 25.7755419], zoom: 12 });
+          app.mapbox.map.flyTo({
+            center: [-80.1989621, 25.7755419],
+            zoom: app.mapbox.adjustZoom(12),
+          });
           // Hide paths
           app.mapbox.participants.hide();
           break;
 
         case "collaboration":
-          app.mapbox.map.flyTo({ center: [-45, 30], zoom: 2 });
+          app.mapbox.map.flyTo({
+            center: [-45, 30],
+            zoom: app.mapbox.adjustZoom(2),
+          });
           // Show paths
           app.mapbox.participants.show();
           break;
 
         case "about":
-          app.mapbox.map.flyTo({ center: [-45, 30], zoom: 2 });
+          app.mapbox.map.flyTo({
+            center: [-45, 30],
+            zoom: app.mapbox.adjustZoom(2),
+          });
           // Show paths
           app.mapbox.participants.show();
           break;
