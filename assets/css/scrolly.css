@@ -61,6 +61,7 @@
 [data-layout="story"] .step {
   height: initial;
   opacity: 1;
+  min-height: initial !important;
 }
 
 .step.is-active {
