@@ -13,12 +13,9 @@
     <script>
       const log = document.querySelector("#log");
       const output = document.querySelector("#output");
-      const sleep = 2000;
+      const sleep = 4000;
 
-      const routes = [
-        "Washington, DC, US; St. Louis, MO, US; Cali, Colombia; Miami, US",
-        "Nassau, Bahamas; Miami, US",
-      ];
+      const routes = ["Pamplona, Spain; Miami, US"];
 
       let results = [];
       let currentRoute = 0;
@@ -54,8 +51,8 @@
           for (let item of results) {
             output.textContent += JSON.stringify(item) + "\n";
           }
-        } catch {
-          console.log("Trying again");
+        } catch (error) {
+          console.error("Trying again", error);
 
           setTimeout(() => {
             geocode(currentRoute, currentCity);
