@@ -42,9 +42,9 @@
 }
 
 #stories a .thumbnail {
-  width: 40%;
-  display: flex;
   align-items: center;
+  display: flex;
+  width: 40%;
 }
 
 #stories a .info {
@@ -75,17 +75,29 @@
   display: none;
 }
 
+[data-layout="story"] iframe {
+  aspect-ratio: 16/9;
+  display: flex;
+  height: auto;
+  margin: 0 auto;
+  width: inherit;
+}
+
+[data-layout="story"] header iframe {
+  width: 100%;
+}
+
 [data-layout="story"] aside {
   background: var(--neutral-100);
 }
 
 .backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
+  background: var(--neutral-50);
   bottom: 0;
   left: 0;
-  background: var(--neutral-50);
+  position: fixed;
+  right: 0;
+  top: 0;
   z-index: -1;
 }
 
@@ -100,7 +112,7 @@
   }
 
   #stories a .info {
-    width: 100%;
     padding: 2em 0;
+    width: 100%;
   }
 }
