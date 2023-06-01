@@ -131,15 +131,15 @@ const app = {
 
       switch (response.element.dataset.step) {
         case "cover":
-          app.mapbox.map.flyTo({
-            center: [-45, 30],
-            zoom: app.mapbox.adjustZoom(2),
-          });
-          // // Fit around Florida
-          // app.mapbox.map.fitBounds([
-          //   [-102.0, 5.7], // SW
-          //   [-59.0, 43.2], // NE
-          // ]);
+          // app.mapbox.map.flyTo({
+          //   center: [-45, 30],
+          //   zoom: app.mapbox.adjustZoom(2),
+          // });
+          // Fit around Florida
+          app.mapbox.map.fitBounds([
+            [-102.0, 5.7], // SW
+            [-59.0, 43.2], // NE
+          ]);
 
           // // Hide paths
           app.mapbox.participants.hide();
