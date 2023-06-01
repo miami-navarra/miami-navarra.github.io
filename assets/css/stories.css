@@ -88,3 +88,19 @@
   background: var(--neutral-50);
   z-index: -1;
 }
+
+@media (max-width: 640px) {
+  .story {
+    flex-direction: column;
+    margin: 96px 0;
+  }
+
+  #stories a .thumbnail {
+    width: 100%;
+  }
+
+  #stories a .info {
+    width: 100%;
+    padding: 2em 0;
+  }
+}
