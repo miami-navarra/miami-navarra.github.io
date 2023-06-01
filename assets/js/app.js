@@ -123,8 +123,6 @@ const app = {
         const lat = parseFloat(response.element.dataset.lat);
         let zoom = parseInt(response.element.dataset.zoom) || 10;
 
-        zoom = app.mapbox.adjustZoom(zoom);
-
         app.mapbox.map.flyTo({ center: [lon, lat], zoom: zoom });
 
         // Hide paths
