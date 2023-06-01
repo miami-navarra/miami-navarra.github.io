@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body data-layout="{{ page.layout }}">
+
+    <div class="backdrop"></div>
+
     {% include nav.html %}
 
     <article>
@@ -67,7 +70,11 @@
 
     </article>
 
-    <aside>{% include stories.html %}</aside>
+    <aside>
+      <div class="container">
+        {% include stories.html %}
+      </div>
+    </aside>
 
     {% include footer.html %}
 
