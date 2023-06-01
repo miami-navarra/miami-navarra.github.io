@@ -26,7 +26,25 @@
           <div class="row">
             <div class="col-12">
               <figure>
-                <img src="{{ page.cover }}" alt="{{ page.alt }}" />
+                {% if page.cover contains ".mp4" %}
+
+                  <video autoplay muted loop playsinline>
+                    <source
+                      src="{{ page.cover }}"
+                      type="video/mp4"
+                    />
+                  </video>
+
+                {% elsif page.cover contains "youtube" %}
+
+                  <iframe src="{{ page.cover | replace: 'watch?v=', 'embed/' }}?color=white&modestbranding=1&rel=0" class="youtube" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                {% else %}
+
+                  <img src="{{ page.cover }}" alt="{{ page.alt }}" />
+
+                {% endif %}
+
                 <figcaption>{{ page.caption }}</figcaption>
               </figure>
             </div>

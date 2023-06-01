@@ -22,7 +22,8 @@
   opacity: 1;
 }
 
-#stories a img {
+#stories a img,
+#stories a video {
   aspect-ratio: 1/1;
   max-width: 100%;
   object-fit: cover;

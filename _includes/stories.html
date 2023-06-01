@@ -20,7 +20,22 @@
           <div class="row">
             <div class="col-1"></div>
             <div class="col-4">
-              <img src="{{ post.cover }}" alt="{{ post.alt }}">
+              
+              {% if post.thumbnail contains ".mp4" %}
+
+                <video autoplay muted loop playsinline>
+                  <source
+                    src="{{ post.thumbnail }}"
+                    type="video/mp4"
+                  />
+                </video>
+
+              {% else %}
+
+                <img src="{{ post.thumbnail }}" alt="{{ post.alt }}" />
+
+              {% endif %}
+
             </div>
             <div class="col-6">
               <h3>{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</h3>
