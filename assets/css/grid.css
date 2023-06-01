@@ -24,8 +24,7 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  width: 96%;
-  /* width: 100%; */
+  width: 92%;
   z-index: 1;
 }
 
@@ -70,11 +69,10 @@
   display: none;
 }
 
-@media (min-width: 540px) {
-  /* 540px */
-  /* .container {
-    width: 80%;
-  } */
+@media (min-width: 640px) {
+  .container {
+    width: 96%;
+  }
 }
 
 @media (min-width: 960px) {
