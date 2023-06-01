@@ -56,3 +56,16 @@ nav .sections a {
 [data-layout="story"] nav {
   background: var(--neutral-50);
 }
+
+@media (max-width: 640px) {
+  .nav-items {
+    flex-direction: column !important;
+  }
+  .logo {
+    height: 48px !important;
+  }
+  .nav-items .logos {
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
