@@ -4,6 +4,7 @@ html,
 body {
   background: var(--neutral-50);
   font-size: 100%;
+  overflow-x: hidden;
 }
 
 body {

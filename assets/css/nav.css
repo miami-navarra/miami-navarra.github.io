@@ -37,6 +37,7 @@ nav .container {
 .nav-items {
   align-items: center;
   display: flex;
+  flex-direction: row !important;
   justify-content: space-between;
 }
 
