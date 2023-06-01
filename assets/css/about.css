@@ -60,6 +60,9 @@
 }
 
 .routes-title {
-  height: 50vh;
-  height: 50lvh;
+  height: 100vh;
+  height: 100lvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
