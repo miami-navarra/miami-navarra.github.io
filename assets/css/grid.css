@@ -70,14 +70,14 @@
   display: none;
 }
 
-@media (min-width: 33.75em) {
+@media (min-width: 540px) {
   /* 540px */
   /* .container {
     width: 80%;
   } */
 }
 
-@media (min-width: 64em) {
+@media (min-width: 960px) {
   .row {
     flex-direction: row;
   }
@@ -153,7 +153,7 @@
   }
 }
 
-@media (min-width: 80em) {
+@media (min-width: 1280px) {
   /* 1280px */
   .container {
     max-width: 1280px;

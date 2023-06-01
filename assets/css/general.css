@@ -50,6 +50,33 @@ h6 {
   font-weight: 700;
 }
 
+@media (max-width: 960px) {
+  h1 {
+    font-size: calc(2.5rem * 1);
+  }
+
+  h2 {
+    font-size: calc(2rem * 1);
+  }
+
+  h3 {
+    font-size: calc(1.375rem * 1);
+  }
+
+  h4 {
+    /* font-size: calc(1.125rem * 2); */
+    font-size: calc(0.875rem * 1);
+  }
+
+  h5 {
+    font-size: calc(1rem * 1);
+  }
+
+  h6 {
+    font-size: calc(0.875rem * 1);
+  }
+}
+
 p {
   font-size: 1.125rem;
   font-weight: 200;
