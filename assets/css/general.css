@@ -73,7 +73,15 @@ blockquote {
   text-align: left;
 }
 
+[data-layout="home"] strong {
+  font-weight: inherit;
+}
+
 [data-layout="story"] {
   background: var(--neutral-900);
   color: var(--neutral-50);
+}
+
+small {
+  opacity: 0.66;
 }

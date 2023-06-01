@@ -7,7 +7,7 @@ const app = {
     token:
       "pk.eyJ1IjoidnN1ZWlybyIsImEiOiJja2F4YXgxeG4wNWVqMnZxdGo2YzBwazh1In0.KwE44b2R9axBHzT9ybktoQ",
     id: "map",
-    style: "mapbox://styles/vsueiro/clhtjemzg01xs01pe02904g3l/draft",
+    style: "mapbox://styles/vsueiro/clhtjemzg01xs01pe02904g3l",
     map: undefined,
     participants: {
       show: function () {
@@ -127,72 +127,34 @@ const app = {
 
         app.mapbox.map.flyTo({ center: [lon, lat], zoom: zoom });
 
-        // Hide country borders
-        app.mapbox.map.setPaintProperty(
-          "country-boundaries",
-          "line-opacity",
-          0
-        );
-        // Make satellite images evident
-        app.mapbox.map.setPaintProperty("satellite", "raster-opacity", 0.5);
         // Hide paths
         app.mapbox.participants.hide();
       }
 
       switch (response.element.dataset.step) {
         case "cover":
-          // Fit around Florida
-          app.mapbox.map.fitBounds([
-            [-102.0, 5.7], // SW
-            [-59.0, 43.2], // NE
-          ]);
-          // Show country borders
-          app.mapbox.map.setPaintProperty(
-            "country-boundaries",
-            "line-opacity",
-            1
-          );
-          // Make satellite images subtle
-          app.mapbox.map.setPaintProperty("satellite", "raster-opacity", 0.1);
-          // Hide paths
-          app.mapbox.participants.hide();
-          break;
-
-        case "global-roots":
-          // Fit around Florida
-          app.mapbox.map.fitBounds([
-            [-102.0, 5.7], // SW
-            [-59.0, 43.2], // NE
-          ]);
-          // Hide country borders
-          app.mapbox.map.setPaintProperty(
-            "country-boundaries",
-            "line-opacity",
-            0
-          );
-          // Make satellite images evident
-          app.mapbox.map.setPaintProperty("satellite", "raster-opacity", 0.5);
-          // Hide paths
-          app.mapbox.participants.hide();
-          break;
-
-        case "borders":
-          // Fly to Government Center
-          app.mapbox.map.flyTo({
-            center: [-80.1989621, 25.7755419],
-            zoom: app.mapbox.adjustZoom(12),
-          });
-          // Hide paths
-          app.mapbox.participants.hide();
-          break;
-
-        case "collaboration":
           app.mapbox.map.flyTo({
             center: [-45, 30],
             zoom: app.mapbox.adjustZoom(2),
           });
-          // Show paths
-          app.mapbox.participants.show();
+          // // Fit around Florida
+          // app.mapbox.map.fitBounds([
+          //   [-102.0, 5.7], // SW
+          //   [-59.0, 43.2], // NE
+          // ]);
+
+          // // Hide paths
+          app.mapbox.participants.hide();
+          break;
+
+        case "stories":
+          // Fly to Government Center
+          app.mapbox.map.flyTo({
+            center: [-80.1989621, 25.7755419],
+            zoom: app.mapbox.adjustZoom(10),
+          });
+          // Hide paths
+          app.mapbox.participants.hide();
           break;
 
         case "about":
