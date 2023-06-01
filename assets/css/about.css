@@ -67,3 +67,9 @@
   justify-content: center;
   text-shadow: 0 0 0.1em var(--neutral-50);
 }
+
+@media (max-width: 640px) {
+  .routes-title br {
+    display: none;
+  }
+}
