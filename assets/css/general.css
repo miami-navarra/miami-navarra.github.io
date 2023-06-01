@@ -34,7 +34,8 @@ h3 {
 }
 
 h4 {
-  font-size: calc(1.125rem * 2);
+  /* font-size: calc(1.125rem * 2); */
+  font-size: calc(0.875rem * 2);
   font-weight: 700;
 }
 

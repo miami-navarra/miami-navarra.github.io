@@ -24,7 +24,8 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  width: 96%;
+  /* width: 96%; */
+  width: 100%;
   z-index: 1;
 }
 
@@ -54,7 +55,7 @@
 .col-10,
 .col-11,
 .col-12 {
-  width: 96%;
+  /* width: 96%; */
   width: 100%;
 }
 
@@ -63,60 +64,6 @@
   margin-right: auto;
   /* width: 96%; */
   width: 100%;
-}
-
-/* .col-1-sm {
-  width: 4.33%;
-}
-
-.col-2-sm {
-  width: 12.66%;
-}
-
-.col-3-sm {
-  width: 21%;
-}
-
-.col-4-sm {
-  width: 29.33%;
-}
-
-.col-5-sm {
-  width: 37.66%;
-}
-
-.col-6-sm {
-  width: 46%;
-}
-
-.col-7-sm {
-  width: 54.33%;
-}
-
-.col-8-sm {
-  width: 62.66%;
-}
-
-.col-9-sm {
-  width: 71%;
-}
-
-.col-10-sm {
-  width: 79.33%;
-}
-
-.col-11-sm {
-  width: 87.66%;
-}
-
-.col-12-sm {
-  width: 96%;
-} */
-
-.row::after {
-  clear: both;
-  content: "";
-  display: table;
 }
 
 .hidden-sm {
@@ -133,67 +80,67 @@
 @media (min-width: 64em) {
   /* 1240px */
   .col-1 {
-    width: 4.33%;
+    /* width: 4.33%; */
     width: calc(100% / 12 * 1);
   }
 
   .col-2 {
-    width: 12.66%;
+    /* width: 12.66%; */
     width: calc(100% / 12 * 2);
   }
 
   .col-3 {
-    width: 21%;
+    /* width: 21%; */
     width: calc(100% / 12 * 3);
   }
 
   .col-4 {
-    width: 29.33%;
+    /* width: 29.33%; */
     width: calc(100% / 12 * 4);
   }
 
   .col-5 {
-    width: 37.66%;
+    /* width: 37.66%; */
     width: calc(100% / 12 * 5);
   }
 
   .col-6 {
-    width: 46%;
+    /* width: 46%; */
     width: calc(100% / 12 * 6);
   }
 
   .col-7 {
-    width: 54.33%;
+    /* width: 54.33%; */
     width: calc(100% / 12 * 7);
   }
 
   .story-container > *:not([class^="col-"], [class^="row"]) {
-    width: 62.66%;
+    /* width: 62.66%; */
     width: calc(100% / 12 * 8);
   }
 
   .col-8 {
-    width: 62.66%;
+    /* width: 62.66%; */
     width: calc(100% / 12 * 8);
   }
 
   .col-9 {
-    width: 71%;
+    /* width: 71%; */
     width: calc(100% / 12 * 9);
   }
 
   .col-10 {
-    width: 79.33%;
+    /* width: 79.33%; */
     width: calc(100% / 12 * 10);
   }
 
   .col-11 {
-    width: 87.66%;
+    /* width: 87.66%; */
     width: calc(100% / 12 * 11);
   }
 
   .col-12 {
-    width: 96%;
+    /* width: 96%; */
     width: calc(100% / 12 * 12);
   }
 

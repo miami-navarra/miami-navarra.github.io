@@ -75,6 +75,29 @@
         {% endfor %}
       </ul>
 
+      <div class="guests-container">
+        <h4>Special Thanks</h4>
+
+        <p>
+          Our deepest gratitude to all the guest speakers, researchers,
+          journalists, and organizations that helped students navigate complex
+          topics.
+        </p>
+
+        <!-- prettier-ignore -->
+        <ul class="guests">
+          {% for row in site.data.guests %}
+
+            {% assign name = row["Full Name"] %}
+
+            <li>
+              {{ name }}
+            </li>
+
+          {% endfor %}
+        </ul>
+      </div>
+
       {% include footer.html %}
     </div>
   </div>

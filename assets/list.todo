@@ -5,12 +5,13 @@
 - [ ] Add final copy
 - [ ] Make responsive for mobile
 - [ ] Improve overall text style
-- [ ] Adjust map zoom level for mobile
+- [x] Adjust map zoom level for mobile
+- [ ] Make step active when page is refreshed, but it was already scrolled down
 
 ### Stories
 
 - [ ] Fix thumbnail and button
-- [ ] Draw orange markers dynamically
+- [-] Draw orange markers dynamically
 
 ### About
 

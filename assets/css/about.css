@@ -9,7 +9,8 @@
   padding: 0;
 }
 
-#about ul.students {
+#about ul.students,
+#about ul.guests {
   column-count: 3;
 }
 
@@ -33,6 +34,10 @@
   text-transform: lowercase;
 }
 
+#about h4 {
+  margin-top: 12px;
+}
+
 .legend {
   font-weight: normal;
   margin-right: 0.1em;
@@ -44,4 +49,12 @@
 
 .legend.faculty {
   color: var(--secondary-100);
+}
+
+.guests-container {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2em;
+  border-radius: 3px;
+  margin: 4em 0;
 }
