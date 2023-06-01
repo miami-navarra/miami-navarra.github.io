@@ -52,7 +52,12 @@
 
             <h3>{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</h3>
             {{ post.lede | markdownify }}
-            <div class="button">Read ↗</div>
+            <div class="button">
+              Read
+              <span class="material-symbols-outlined">
+                arrow_right_alt
+              </span>
+            </div>
 
           </div>
 

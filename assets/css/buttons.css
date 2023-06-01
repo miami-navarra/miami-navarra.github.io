@@ -11,4 +11,7 @@ button,
   position: relative;
   text-align: uppercase;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

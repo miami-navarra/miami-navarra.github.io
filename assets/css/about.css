@@ -65,4 +65,5 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-shadow: 0 0 0.1em var(--neutral-50);
 }

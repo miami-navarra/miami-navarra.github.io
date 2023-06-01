@@ -82,7 +82,3 @@ blockquote {
   background: var(--neutral-900);
   color: var(--neutral-50);
 }
-
-small {
-  opacity: 0.75;
-}
