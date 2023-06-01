@@ -55,9 +55,9 @@
 }
 
 .story-container > *:not([class^="col-"], [class^="row"]) {
-  width: 96%;
   margin-left: auto;
   margin-right: auto;
+  width: 96%;
 }
 
 .col-1-sm {

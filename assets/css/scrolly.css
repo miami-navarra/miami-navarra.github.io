@@ -24,8 +24,6 @@
   position: -webkit-sticky;
   position: sticky;
   position: fixed;
-  /* top: 25vh;
-  top: 25lvh; */
   top: 0;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -50,17 +48,17 @@
 .step {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 100vh !important;
   min-height: 100lvh !important;
-  justify-content: center;
   opacity: 0.2;
   transition: all 0.4s;
 }
 
 [data-layout="story"] .step {
   height: initial;
-  opacity: 1;
   min-height: initial !important;
+  opacity: 1;
 }
 
 .step.is-active {
