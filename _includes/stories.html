@@ -15,37 +15,39 @@
   {% for post in site.posts reversed %}
     {% if page.url != post.url %}
     <div class="row">
-      <div class="col-12 step" data-step="" data-lon="{{ post.lon }}" data-lat="{{ post.lat }}" data-zoom="14">
-        <a href="{{ post.url }}">
-          <div class="row">
-            <div class="col-1"></div>
-            <div class="col-4">
-              
-              {% if post.thumbnail contains ".mp4" %}
+      <div class="col-2"></div>
+      <div class="col-8 step" data-step="" data-lon="{{ post.lon }}" data-lat="{{ post.lat }}" data-zoom="14">
+        
+        <a href="{{ post.url }}" class="story">
 
-                <video autoplay muted loop playsinline>
-                  <source
-                    src="{{ post.thumbnail }}"
-                    type="video/mp4"
-                  />
-                </video>
+          <div class="thumbnail">
+            
+            {% if post.thumbnail contains ".mp4" %}
 
-              {% else %}
+              <video autoplay muted loop playsinline>
+                <source
+                  src="{{ post.thumbnail }}"
+                  type="video/mp4"
+                />
+              </video>
 
-                <img src="{{ post.thumbnail }}" alt="{{ post.alt }}" />
+            {% else %}
 
-              {% endif %}
+              <img src="{{ post.thumbnail }}" alt="{{ post.alt }}" />
 
-            </div>
-            <div class="col-6">
-              <h3>{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</h3>
-              {{ post.lede | markdownify }}
-              <div class="button">
-                Read ↗
-              </div>
-            </div>
+            {% endif %}
           </div>
+
+          <div class="info">
+
+            <h3>{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</h3>
+            {{ post.lede | markdownify }}
+            <div class="button">Read ↗</div>
+
+          </div>
+
         </a>
+
       </div>
     </div>
     {% endif %}
