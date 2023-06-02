@@ -12,7 +12,7 @@ body {
   font-family: Syne, Helvetica, sans-serif;
   font-weight: 400;
   transition: opacity 1s;
-  line-height: 1.25;
+  line-height: 1.1;
 }
 
 body.initialized {
@@ -24,8 +24,12 @@ h1 {
   font-weight: 700;
 }
 
+[data-layout="story"] h1 {
+  font-size: calc(2.5rem * 1.5);
+}
+
 h2 {
-  font-size: calc(2rem * 2);
+  font-size: calc(2rem * 1.5);
   font-weight: 700;
 }
 
@@ -75,6 +79,31 @@ h6 {
   h6 {
     font-size: calc(0.875rem * 1);
   }
+}
+
+.story-container h1,
+.story-container h2,
+.story-container h3,
+.story-container h4,
+.story-container h5,
+.story-container h6 {
+  text-align: center;
+  position: relative;
+}
+
+.story-container h1::before,
+.story-container h2::before,
+.story-container h3::before,
+.story-container h4::before,
+.story-container h5::before,
+.story-container h6::before {
+  content: "";
+  display: flex;
+  height: 2px;
+  width: 100%;
+  max-width: 120px;
+  background: var(--primary-100);
+  margin: 48px auto;
 }
 
 p {
