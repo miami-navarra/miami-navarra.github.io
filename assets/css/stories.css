@@ -103,14 +103,25 @@ figcaption {
 }
 
 .story-container img,
-.story-container iframe {
+.story-container iframe,
+.story-container .flourish-embed {
+  margin: 3.2em auto;
+  display: block;
+}
+
+.story-container audio {
   margin: 3.2em auto;
   display: flex;
+  align-self: center;
 }
 
 .story-container figure img,
 .story-container figure iframe {
   margin: 0 auto;
+}
+
+.story-container .flourish-embed iframe {
+  margin: 0 auto 0.5em;
 }
 
 .date p {
