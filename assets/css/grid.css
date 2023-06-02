@@ -159,3 +159,7 @@
     /* max-width: 60rem; */
   }
 }
+
+.story-container {
+  max-width: 1024px;
+}
