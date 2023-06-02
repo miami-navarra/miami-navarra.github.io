@@ -113,6 +113,20 @@ figcaption {
   margin: 0 auto;
 }
 
+.date p {
+  margin-bottom: 0;
+}
+.authors p {
+  margin-top: 0;
+  margin-bottom: 3.2em;
+}
+
+.date p,
+.authors p {
+  opacity: 0.75;
+  font-size: 1em;
+}
+
 .backdrop {
   background: var(--neutral-50);
   bottom: 0;
