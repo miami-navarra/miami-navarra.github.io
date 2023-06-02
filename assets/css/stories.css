@@ -108,6 +108,11 @@ figcaption {
   display: flex;
 }
 
+.story-container figure img,
+.story-container figure iframe {
+  margin: 0 auto;
+}
+
 .backdrop {
   background: var(--neutral-50);
   bottom: 0;
