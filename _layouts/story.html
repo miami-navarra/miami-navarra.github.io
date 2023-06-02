@@ -52,7 +52,7 @@
 
                 {% endif %}
 
-                <figcaption>{{ page.caption }}</figcaption>
+                <figcaption>{{ page.caption | markdownify }}</figcaption>
               </figure>
             </div>
           </div>
@@ -89,6 +89,6 @@
     </aside>
 
     {% include footer.html %}
-    
+
   </body>
 </html>
