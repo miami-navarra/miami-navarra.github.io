@@ -149,7 +149,7 @@ const app = {
           // Fly to Government Center
           app.mapbox.map.flyTo({
             center: [-80.1989621, 25.7755419],
-            zoom: app.mapbox.adjustZoom(10),
+            zoom: 10,
           });
           // Hide paths
           app.mapbox.participants.hide();
