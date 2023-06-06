@@ -69,3 +69,9 @@
   backdrop-filter: blur(8px);
   margin: 0;
 }
+
+@media print {
+  .step {
+    opacity: 1;
+  }
+}

@@ -69,3 +69,9 @@ nav .sections a {
     order: -1;
   }
 }
+
+@media print {
+  [data-layout="home"] nav::before {
+    display: none;
+  }
+}
