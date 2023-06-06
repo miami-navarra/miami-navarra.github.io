@@ -10,6 +10,24 @@ const app = {
     style: "mapbox://styles/vsueiro/clhtjemzg01xs01pe02904g3l",
     map: undefined,
     participants: {
+      highlight: function (target) {
+        if (app.isSmall()) {
+          app.mapbox.participants.show();
+          return;
+        }
+
+        for (let participant of participants) {
+          const id = participant.data.properties.id;
+          if (app.mapbox.map.getLayer(id)) {
+            if (id === target) {
+              app.mapbox.map.setPaintProperty(id, "line-opacity", 1);
+            } else {
+              app.mapbox.map.setPaintProperty(id, "line-opacity", 0.025);
+            }
+          }
+        }
+      },
+
       show: function () {
         for (let participant of participants) {
           const id = participant.data.properties.id;
@@ -50,6 +68,32 @@ const app = {
           app.mapbox.map.addLayer(options);
         }
       },
+      initialize: function () {
+        app.mapbox.participants.draw();
+
+        const items = document.querySelectorAll("li[data-id]");
+
+        for (let item of items) {
+          item.addEventListener("mouseover", () => {
+            const target = item.dataset.id;
+
+            for (let other of items) {
+              other.classList.add("dim");
+            }
+
+            item.classList.remove("dim");
+            app.mapbox.participants.highlight(target);
+          });
+
+          item.addEventListener("mouseout", () => {
+            for (let other of items) {
+              other.classList.remove("dim");
+            }
+
+            app.mapbox.participants.show();
+          });
+        }
+      },
     },
     adjustZoom: (idealZoom) => {
       if (idealZoom === 0) {
@@ -76,7 +120,7 @@ const app = {
 
       app.mapbox.map.on("load", () => {
         app.scrollama.handleStepEnter();
-        app.mapbox.participants.draw();
+        app.mapbox.participants.initialize();
       });
     },
   },
@@ -188,10 +232,9 @@ const app = {
     app.scrollama.initialize();
     app.mapbox.initialize();
 
-    window.scrollTo(0, 0);
-
     setTimeout(() => {
       document.body.classList.add("initialized");
+      window.scrollTo(0, 0);
     }, 500);
   },
 };

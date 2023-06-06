@@ -96,23 +96,23 @@
 }
 
 figcaption {
+  margin-bottom: 2em;
   opacity: 0.75;
   padding: 1em;
   text-align: center;
-  margin-bottom: 2em;
 }
 
 .story-container img,
 .story-container iframe,
 .story-container .flourish-embed {
-  margin: 3.2em auto;
   display: block;
+  margin: 3.2em auto;
 }
 
 .story-container audio {
-  margin: 3.2em auto;
-  display: flex;
   align-self: center;
+  display: flex;
+  margin: 3.2em auto;
 }
 
 .story-container figure img,
@@ -128,14 +128,14 @@ figcaption {
   margin-bottom: 0;
 }
 .authors p {
-  margin-top: 0;
   margin-bottom: 3.2em;
+  margin-top: 0;
 }
 
 .date p,
 .authors p {
-  opacity: 0.75;
   font-size: 1em;
+  opacity: 0.75;
 }
 
 .backdrop {

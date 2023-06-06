@@ -65,7 +65,7 @@ nav .sections a {
     height: 48px !important;
   }
   .nav-items .logos {
-    order: -1;
     margin-bottom: 20px;
+    order: -1;
   }
 }

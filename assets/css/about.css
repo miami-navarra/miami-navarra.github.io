@@ -12,12 +12,28 @@
 #about ul.students,
 #about ul.guests {
   column-count: 3;
+  column-gap: 0;
+}
+
+#about ul.faculty li {
+  width: fit-content;
 }
 
 #about li {
   border-top: 0px solid;
   break-inside: avoid;
-  padding: 12px 0;
+  padding: 12px 12px 12px 0;
+}
+
+@media (min-width: 960px) {
+  #about li[data-id] {
+    cursor: default;
+    transition: opacity 0.3s;
+  }
+
+  #about li[data-id].dim {
+    opacity: 0.1;
+  }
 }
 
 #about ul.faculty span {
@@ -54,16 +70,16 @@
 .guests-container {
   backdrop-filter: blur(8px);
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 2em;
   border-radius: 3px;
   margin: 4em 0;
+  padding: 2em;
 }
 
 .routes-title {
-  height: 100vh;
-  height: 100lvh;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  height: 100lvh;
   justify-content: center;
   text-shadow: 0 0 0.1em var(--neutral-50);
 }

@@ -11,8 +11,8 @@ body {
   color: var(--neutral-900);
   font-family: Syne, Helvetica, sans-serif;
   font-weight: 400;
-  transition: opacity 1s;
   line-height: 1.1;
+  transition: opacity 1s;
 }
 
 body.initialized {
@@ -87,8 +87,8 @@ h6 {
 .story-container h4,
 .story-container h5,
 .story-container h6 {
-  text-align: center;
   position: relative;
+  text-align: center;
 }
 
 .story-container h1::before,
@@ -97,13 +97,13 @@ h6 {
 .story-container h4::before,
 .story-container h5::before,
 .story-container h6::before {
+  background: var(--primary-100);
   content: "";
   display: flex;
   height: 2px;
-  width: 100%;
-  max-width: 120px;
-  background: var(--primary-100);
   margin: 48px auto;
+  max-width: 120px;
+  width: 100%;
 }
 
 p {
