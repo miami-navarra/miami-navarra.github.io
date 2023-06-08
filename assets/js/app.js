@@ -234,7 +234,7 @@ const app = {
 
     setTimeout(() => {
       document.body.classList.add("initialized");
-      window.scrollTo(0, 0);
+      app.scrollama.handleResize();
     }, 500);
   },
 };
