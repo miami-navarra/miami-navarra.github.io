@@ -235,6 +235,7 @@ const app = {
     setTimeout(() => {
       document.body.classList.add("initialized");
       app.scrollama.handleResize();
+      window.dispatchEvent(new Event("resize"));
     }, 500);
   },
 };
