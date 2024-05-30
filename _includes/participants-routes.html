@@ -6,7 +6,7 @@
   {% for row in site.data.participants %}
 
     {% assign name = row["Full Name"] %}
-    {% assign coordinates = row["Coordinates (lon,lat)"] %}
+    {% assign coordinates = row["Coords"] %}
     {% assign role = row["Role"] %}
 
     {% if coordinates %}
