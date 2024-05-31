@@ -7,23 +7,15 @@
       <div class="col-3"></div>
       <div class="step col-6" data-step="stories">
         <h2 class="center">Stories</h2>
-        <p>
-          Six captivating news stories,
-          produced during the summer of 2023,
-          seek to amplify local voices usually left unheard,
-          while seeking to deepen the understanding of global issues affecting Miami residents.
-        </p>
-        <p>
-          The stories, produced by students of the <strong>Universidad de Navarra</strong>
-          and the <strong>University of Miami</strong> shed light on these global issues,
-          told by the people they affect the most.
-        </p>
+        <p>Four captivating news stories, produced during the summer of 2024, seek to amplify local voices usually left unheard, while seeking to deepen the understanding of global issues affecting Miami residents.</p>
+
+        <p>The stories, produced by students of the <strong>Universidad de Navarra</strong> and the <strong>University of Miami</strong> shed light on these global issues, told by the people they affect the most.</p>
       </div>
     </div>
   </header>
 
   {% for post in site.posts reversed %}
-    {% if page.url != post.url %}
+    {% if post.path contains '2024' %}
     <div class="row">
       <div class="col-2"></div>
       <div class="col-8 step" data-step="" data-lon="{{ post.lon }}" data-lat="{{ post.lat }}" data-zoom="{{ post.zoom }}">
