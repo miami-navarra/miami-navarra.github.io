@@ -1,0 +1,66 @@
+<!-- prettier-ignore -->
+
+<section id="stories">
+
+  <header>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="step col-6" data-step="stories">
+        <h2 class="center">Stories</h2>
+        <p>
+          Six captivating news stories, produced during the summer of 2023, seek to amplify local voices usually left unheard, while seeking to deepen the understanding of global issues affecting Miami residents.
+        </p>
+        <p>
+          The stories, produced by students of the <strong>Universidad de Navarra</strong> and the <strong>University of Miami</strong> shed light on these global issues, told by the people they affect the most.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  {% for post in site.posts reversed %}
+    {% if page.url != post.url %}
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8 step" data-step="" data-lon="{{ post.lon }}" data-lat="{{ post.lat }}" data-zoom="{{ post.zoom }}">
+        
+        <a href="{{ post.url }}" class="story">
+
+          <div class="thumbnail">
+            
+            {% if post.thumbnail contains ".mp4" %}
+
+              <video autoplay muted loop playsinline>
+                <source
+                  src="{{ post.thumbnail }}"
+                  type="video/mp4"
+                />
+              </video>
+
+            {% else %}
+
+              <img src="{{ post.thumbnail }}" alt="{{ post.alt }}" />
+
+            {% endif %}
+          </div>
+
+          <div class="info">
+
+            <h3>{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</h3>
+            {{ post.lede | markdownify }}
+            <div class="button">
+              Read
+              <span class="material-symbols-outlined">
+                arrow_right_alt
+              </span>
+            </div>
+
+          </div>
+
+        </a>
+
+      </div>
+    </div>
+    {% endif %}
+  {% endfor %}
+
+</section>
